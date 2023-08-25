@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int n,a;
+    printf("entrer");
+    scanf("%d",&n);
+    a=n/2;
+    if(a*2==n){
+        printf("its even");
+    }else if(a*2+1==n){
+        printf("its odd");
+    }
+    return 0;
+}
