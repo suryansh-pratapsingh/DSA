@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void main() {
+  int a,i,r,q;
+  printf("enter");
+  scanf("%d",a);
+  for(i=0;i<=a/2;i++)
+  {
+      a%i==r;
+      if(r==0){
+          a/i==q;
+          a==q;
+      }
+  }
+}
