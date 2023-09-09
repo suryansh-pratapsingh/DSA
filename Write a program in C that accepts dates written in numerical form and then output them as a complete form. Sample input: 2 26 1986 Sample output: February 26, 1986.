@@ -1,0 +1,53 @@
+
+int main() {
+    int n1,n2,n3;
+    printf("enter the date ");
+    scanf("%d%d%d",&n1,&n2,&n3);
+    if(n1==1){
+        printf("Date is january %d %d ",n2,n3);
+    }else if(n1==2){
+         printf("Date is February %d %d ",n2,n3);
+    }
+    else if(n1==3){
+        printf("Date is march %d %d ",n2,n3);
+    }
+    else if(n1==4){
+        printf("Date is april %d %d ",n2,n3);
+    }
+    else if(n1==5){
+        printf("Date is may  %d %d ",n2,n3);
+
+    }
+    else if(n1==6){
+         printf("Date is june %d %d ",n2,n3);
+    }
+    else if(n1==7){
+        printf("Date is july %d %d ",n2,n3);
+
+    }
+    else if(n1==8){
+        printf("Date is august %d %d ",n2,n3);
+
+    }
+    else if(n1==9){
+         printf("Date is srptember %d %d ",n2,n3);
+
+    }
+    else if(n1==10){
+        printf("Date is october %d %d ",n2,n3);
+
+    }
+    else if(n1==11){
+        printf("Date is November %d %d ",n2,n3);
+
+    }
+    else if(n1==12){
+        printf("Date is December %d %d ",n2,n3);
+
+    }
+    else{
+        printf("enter valid date");
+
+    }
+    return 0;
+}
