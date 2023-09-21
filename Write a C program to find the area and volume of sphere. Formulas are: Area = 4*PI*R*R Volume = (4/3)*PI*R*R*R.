@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+void main() {
+    float pi,r,ar,vol;
+    printf("enter the values pi and r");
+    scanf("%f%f",&pi,&r);
+    
+    ar =4*pi*r*r;
+    vol=4/3*pi*r*r*r;
+    
+    printf("area%f and volume%f is",ar,vol);
+}
