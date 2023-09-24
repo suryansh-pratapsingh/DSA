@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+void main() {
+  int n1,n2,n3,n4,ne,n,nx ;
+  printf("enter n");
+  scanf("%d",&n) ;
+  n1 = n/1000;
+  ne = n - (n1*1000);
+  n2 = ne/100 ;
+  nx = ne-n2*100 ;
+  n3 = nx/10 ;
+  n4 = nx-n3*10 ;
+  switch(n1,n2,n3,n4)
+  {
+        case 1:printf("One");break;
+        case 2:printf("Two");break;
+        case 3:printf("Three");break;
+        default:printf("Please enter valid dada type");break;
+  }
+  printf("%d thousand %d hundred %d tens %d unit ",n1,n2,n3,n4);
+}
