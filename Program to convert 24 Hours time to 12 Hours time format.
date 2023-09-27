@@ -1,0 +1,21 @@
+
+#include <stdio.h>
+
+int main() {
+  float t,tt;
+  printf("enter time");
+  scanf("%f",&t);
+  if(t<13){
+      printf("time is %f",t);
+      
+  }
+   else if(t>24){
+      printf("envalid");
+  }
+  else if(t>12) {
+      tt=t-12;
+      printf("time is %f",tt);
+  }
+    return 0;
+}
+
