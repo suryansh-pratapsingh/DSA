@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n,temp,i,r,f,s=0;
+   printf("enter");
+   scanf("%d",&n);
+   temp=n;
+   while(n>0){
+       r=n%10;
+       f=1;
+       for(i=0;i<r;i++){
+           f=f*r;
+       }
+       s=s+f;
+       n=n/10;
+   }
+   
+   if(s==temp){
+       printf("yes");
+   }
+   else{
+       printf("no");
+   }
+
+    return 0;
+}
