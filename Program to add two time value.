@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    float t, t2, tt = 0, tt2 = 0, s;
+    printf("Enter the first time (in 24-hour format): ");
+    scanf("%f", &t);
+
+    if (t < 13 && t >= 0) {
+        // Time is already in valid range (0-12)
+        tt = t;
+    } else if (t >= 13 && t <= 24) {
+        // Convert time to 12-hour format
+        tt = t - 12;
+    } else {
+        printf("Invalid 
+time.\n");
+return 1; // Exit with an error code
+    }
+
+    printf("Enter the second time (in 24-hour format): ");
+    scanf("%f", &t2);
+
+    if (t2 < 13 && t2 >= 0) {
+        // Time is already in valid range (0-12)
+        tt2 = t2;
+    } else if (t2 >= 13 && t2 <= 24) {
+        // Convert time to 12-hour format
+        tt2 = t2 - 12;
+    } else {
+        printf("Invalid time.\n");
+        return 1; // Exit with an error code
+    }
+
+    s = tt + tt2;
+    printf("Sum of times in 12-hour format: %.2f\n", s);
+
+    return 0;
+}
