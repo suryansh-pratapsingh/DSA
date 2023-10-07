@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s[30], d[20];
+    int a, b, i, j;
+
+    printf("Enter the main string: ");
+    scanf("%s", s);
+
+    printf("Enter the sub string: ");
+    scanf("%s", d);
+
+    a = strlen(s); // Calculate the length of the main string 's'
+    b = strlen(d); // Calculate the length of the sub string 'd'
+
+    for (i = 0; i <= a - b; i++) { // Loop through the main string
+        for (j = 0; j < b; j++) { // Loop through the sub string
+            if (s[i + j] != d[j]) {
+                break; // If characters don't match, break out of the inner loop
+            }
+        }
+        if (j == b) {
+            printf("Substring found at index %d\n", i);
+            return 0; // Return here to stop searching after finding the first occurrence
+        }
+    }
+
+    printf("Substring not found\n");
+
+    return 0;
+}
