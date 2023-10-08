@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+// Function to check if a year is a leap year (simplified)
+int isLeapYear(int year) {
+    return (year % 4 == 0);
+}
+
+// Function to calculate the number of days in a month (simplified)
+int daysInMonth(int month) {
+    if (month < 1 || month > 12) {
+        return -1; // Invalid month
+    }
+    int days[] = {0, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30};
+    return days[month];
+}
+
+// Function to calculate the number of days between two dates
+int daysBetweenDates(int day1, int month1, int year1, int day2, int month2, int year2) {
+    int totalDays = 0;
+
+    // Check for valid input
+    if (year1 > year2 || (year1 == year2 && month1 > month2) || (year1 == year2 && month1 == month2 && day1 > day2)) {
+        return -1; // Invalid input
+    }
+
+    // Calculate days in the first year
+    for (int month = month1; month <= 12; ++month) {
+        int daysInCurrentMonth = daysInMonth(month);
+        if (month == month1) {
+            daysInCurrentMonth -= day1 - 1;
+        }
+        totalDays += daysInCurrentMonth;
+    }
+
+    // Calculate days in the years in between
+    for (int year = year1 + 1; year < year2; ++year) {
+        totalDays += isLeapYear(year) ? 366 : 365;
+    }
+
+    // Calculate days in the last year
+    for (int month = 1; month < month2; ++month) {
+        int daysInCurrentMonth = daysInMonth(month);
+        if (month == month2 - 1) {
+            daysInCurrentMonth -= daysInMonth(month2) - day2;
+        }
+        totalDays += daysInCurrentMonth;
+    }
+
+    return totalDays;
+}
+
+int main() {
+    int day1, month1, year1, day2, month2, year2;
+
+    printf("Enter the first date (dd mm yyyy): ");
+    scanf("%d %d %d", &day1, &month1, &year1);
+
+    printf("Enter the second date (dd mm yyyy): ");
+    scanf("%d %d %d", &day2, &month2, &year2);
+
+    int result = daysBetweenDates(day1, month1, year1, day2, month2, year2);
+
+    if (result == -1) {
+        printf("Invalid input.\n");
+    } else {
+        printf("Number of days between the two dates: %d days\n", result);
+    }
+
+    return 0;
+}
