@@ -1,0 +1,98 @@
+#include <stdio.h>
+
+int main() {
+    int n, m, i, j;
+    
+    printf("Enter the size of the matrix: ");
+    scanf("%d %d", &n, &m);
+    
+    int a[n][m];
+    int a2[n][m];
+    int a3[n][m];
+
+    printf("Enter the first matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter the second matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            scanf("%d", &a2[i][j]);
+        }
+    }
+
+    char o;
+    printf("Enter the operation (a for addition, s for subtraction, m for multiplication, d for division): ");
+    scanf(" %c", &o);
+
+    switch (o) {
+        case 'a':
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    a3[i][j] = a[i][j] + a2[i][j];
+                }
+            }
+            printf("Resultant matrix (addition):\n");
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    printf("%d ", a3[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        case 's':
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    a3[i][j] = a[i][j] - a2[i][j];
+                }
+            }
+            printf("Resultant matrix (subtraction):\n");
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    printf("%d ", a3[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        case 'm':
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    a3[i][j] = a[i][j] * a2[i][j];
+                }
+            }
+            printf("Resultant matrix (multiplication):\n");
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    printf("%d ", a3[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        case 'd':
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    if (a2[i][j] == 0) {
+                        printf("Division by zero is not allowed.\n");
+                        return 1;
+                    }
+                    a3[i][j] = a[i][j] / a2[i][j];
+                }
+            }
+            printf("Resultant matrix (division):\n");
+            for (i = 0; i < n; i++) {
+                for (j = 0; j < m; j++) {
+                    printf("%d ", a3[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+        default:
+            printf("Invalid operation.\n");
+    }
+
+    return 0;
+}
+
