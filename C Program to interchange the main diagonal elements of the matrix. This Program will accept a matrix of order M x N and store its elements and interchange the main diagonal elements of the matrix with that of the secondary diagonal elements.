@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, i, j, l, m;
+    printf("Specify the parameters of the matrix: ");
+    scanf("%d %d", &a, &b);
+    int mat1[a][b];
+    printf("Enter matrix 1:\n");
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            scanf("%d", &mat1[i][j]);
+        }
+    }
+    l = 1;
+    m = b;
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            if (i == j) {
+               
+                mat1[i][j] = mat1[l][m];
+                l++;
+                m--;
+            }
+        }
+    }
+
+    printf("Modified matrix 1:\n");
+    for (i = 0; i < a; i++) {
+        for (j = 0; j < b; j++) {
+            printf("%d\t", mat1[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
