@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+        char M[N], R[N];
+        int MohanScore = 0, RohanScore = 0;
+
+        for (int i = 0; i < N; i++) {
+            scanf(" %c", &M[i]);
+        }
+
+        for (int i = 0; i < N; i++) {
+            scanf(" %c", &R[i]);
+        }
+
+        for (int i = 0; i < N; i++) {
+            if (M[i] == 'D') {
+                MohanScore *= 2;
+            } else if (M[i] == 'H') {
+                MohanScore /= 2;
+            } else {
+                MohanScore += (M[i] - '0');
+            }
+
+            if (R[i] == 'D') {
+                RohanScore *= 2;
+            } else if (R[i] == 'H') {
+                RohanScore /= 2;
+            } else {
+                RohanScore += (R[i] - '0');
+            }
+        }
+
+        if (MohanScore > RohanScore) {
+            printf("Mohan %d\n", MohanScore);
+        } else if (RohanScore > MohanScore) {
+            printf("Rohan %d\n", RohanScore);
+        } else {
+            printf("Tie %d\n", MohanScore);
+        }
+    }
+
+    return 0;
+}
