@@ -1,2 +1,2 @@
 # DSA
-Here i am gonna share my less time and space complex code for big questions 
+Here I am gonna share my optimal time and space complexity code for big questions 
